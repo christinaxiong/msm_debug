@@ -30,7 +30,6 @@ class DirectorsController < ApplicationController
 
   def update_row
     @director = Director.find(params[:id])
-
     @director.dob = params[":dob"]
     @director.name = params[":name"]
     @director.bio = params[":bio"]
@@ -38,7 +37,7 @@ class DirectorsController < ApplicationController
 
     @director.save
 
-    render("show")
+    render("/directors/show_details.html.erb")
   end
 
   def destroy
