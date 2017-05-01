@@ -19,7 +19,7 @@ class ActorsController < ApplicationController
 
     @actor.save
 
-    render("show")
+    render("actors/show.html.erb")
   end
 
   def edit_form
@@ -29,14 +29,14 @@ class ActorsController < ApplicationController
   def update_row
     @actor = Actor.find(params[:id])
 
-    @actor.dob = params[:dob]
-    @actor.name = params[:name]
-    @actor.bio = params[:bio]
-    @actor.image_url = params[:image_url]
+    @actor.dob = params[":dob"]
+    @actor.name = params[":name"]
+    @actor.bio = params[":bio"]
+    @actor.image_url = params[":image_url"]
 
     @actor.save
 
-    render("show")
+    render("actors/show.html.erb")
   end
 
   def destroy
